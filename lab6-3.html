@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>20BCE1176</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20BCE1368</title>
+    <script type="text/javascript">
+        function calculate(){
+            // console.log("called")
+            gender = document.getElementById("gender").value;
+            weight = document.getElementById("weight").value;
+            height_feet = document.getElementById("height_feet").value;
+            height_inches = document.getElementById("height_inches").value;
+
+            if(height_feet != 0){
+                height = height_feet;
+            } else{
+                height = height_inches;
+            }
+            // bmi = document.getElementById("bmi")
+            bmi.value = 703 * weight / (height * height);
+            console.log(weight, height, gender)
+
+            if(gender == "Male"){
+                if(bmi.value > 31.10){
+                    alert("Very overweight or Obese range");
+                } else if(bmi.value >= 27.81){
+                    alert("Overweight range");
+                } else if(bmi.value >= 26.41){
+                    alert("Marginally overwight range");
+                } else if(bmi.value >= 20.71){
+                    alert("Ideal range");
+                } else if (bmi.value >= 17.501){
+                    alert("Underweight");
+                } else {
+                    alert("Anorexia");
+                }
+            } else{
+                if(bmi.value > 32.30){
+                    alert("Very overweight or Obese range");
+                } else if(bmi.value >= 27.31){
+                    alert("Overweight range");
+                } else if(bmi.value >= 25.81){
+                    alert("Marginally overwight range");
+                } else if(bmi.value >= 19.11){
+                    alert("Ideal range");
+                } else if (bmi.value >= 17.51){
+                    alert("Underweight");
+                } else {
+                    alert("Anorexia");
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <table border="2" align="center">
+        <tr>
+            <td colspan="2" >
+                <center>
+                    <b>BMI Calculator</b>
+                    <select id="gender">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </center>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>Enter your Weight:</b>
+                <br/>
+                (in pounds) <input type="number" id="weight"/> <!--176-->
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>Enter your Height:</b>
+                <br/>
+                (feet) <input type="number" id="height_feet" value="0"/>
+                <br/><br/>
+                (inches) <input type="number" id="height_inches" value="0"/> <!--67-->
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <center>
+                <button onclick="calculate()">Calculate</button>
+            </center>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>YOUR BMI</b>
+            </td>
+            <td>
+                <center>
+                    <input type="number" value="0" id="bmi"/>
+                </center>
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>

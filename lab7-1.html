@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>20BCE1176</title>
+<style>
+input
+{
+    background-color: green;
+}
+input:focus 
+{
+    background-color: yellow;
+}
+button 
+{   
+ color: white;
+ background-color:red;
+ padding: 5px 10px 8px 10px;
+ }
+ button:hover 
+ {
+ animation-name: button-color;
+ animation-duration: 5s;
+ }
+ @keyframes button-color 
+ {
+ 100% {
+ background-color: green;
+ }
+ }
+</style>
+</head>
+<body>
+<div id="myform">
+<h2><b>Dynamic Table</b></h2>
+Name:
+<input type="text" id="nam">&ensp;&ensp;
+Age:
+<input type="text" id="age"><br><br>
+<button onclick="Javascript:addRow()">Add</button>
+<div id="mydata">
+<b>The Table</b><br><br>
+<table id="data" border="1" cellpadding="2">
+<tr>
+<td><b>Name</b></td>
+<td><b>Age</b></td>
+</tr>
+</table>
+</div>
+<button>Button</button>
+<script>
+function addRow() 
+{
+ var name = document.getElementById("nam");
+ var age = document.getElementById("age");
+ var table = document.getElementById("data");
+ var rc = table.rows.length;
+ var row = table.insertRow(rc);
+ row.insertCell(0).innerHTML= name.value;
+ row.insertCell(1).innerHTML= age.value;
+}
+</script>
+</body>
+</html>
